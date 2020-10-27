@@ -1,0 +1,1 @@
+347 "Кассовые отчеты Новые-Менеджер" 192.168.5.85\K21 KassRealiz cashreportnew 12345 "Силкина С. С." МН "Менеджер" KON 1 "KassRealiz  для К21 ISI_15" 96 192.168.5.85\K21_SQLC KassRealiz
