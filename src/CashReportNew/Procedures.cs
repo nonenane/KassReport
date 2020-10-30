@@ -7,6 +7,7 @@ using System.Collections;
 using Nwuram.Framework.Data;
 using Nwuram.Framework.Settings.User;
 using Nwuram.Framework.Settings.Connection;
+using System.Threading.Tasks;
 
 namespace CashReportNew
 {
@@ -130,6 +131,16 @@ namespace CashReportNew
             parameters.Clear();
             parameters.Add(date);
             return executeProcedure("[CashReport].[getLegalEntities]", new string[] { "@date" }, new DbType[] { DbType.DateTime }, parameters);
+        }
+
+        public DataTable GetDataActionGoodsRealiz(DateTime DateStart, DateTime DateEnd)
+        {
+            parameters.Clear();
+            parameters.Add(DateStart);
+            parameters.Add(DateEnd);
+            return executeProcedure("[CashReport].[GetDataActionGoodsRealiz]",
+                new string[2] { "@DateStart","@DateEnd" },
+                new DbType[2] { DbType.DateTime, DbType.DateTime }, parameters);
         }
     }
 }

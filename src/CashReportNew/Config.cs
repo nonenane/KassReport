@@ -6,6 +6,7 @@ using System.Text;
 using Nwuram.Framework.Project;
 using Nwuram.Framework.Logging;
 using Nwuram.Framework.Settings.Connection;
+using System.Windows.Forms;
 
 namespace CashReportNew
 {
@@ -16,5 +17,9 @@ namespace CashReportNew
         //public static Procedures hCntVVOdbase1 { get; set; } //доп. коннект
         public static Procedures hCntVVOKasReal { get; set; } //доп. коннект
 
+        public static void DoOnUIThread(MethodInvoker d, Form _this)
+        {
+            if (_this.InvokeRequired) { _this.Invoke(d); } else { d(); }
+        }
     }
 }

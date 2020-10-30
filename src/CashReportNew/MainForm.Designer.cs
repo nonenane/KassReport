@@ -30,20 +30,21 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.mainStatusStrip = new System.Windows.Forms.StatusStrip();
             this.tslConnection = new System.Windows.Forms.ToolStripStatusLabel();
@@ -51,16 +52,23 @@
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tbcCashReport = new System.Windows.Forms.TabControl();
             this.tabCash = new System.Windows.Forms.TabPage();
+            this.cmbTypeNotes = new System.Windows.Forms.ComboBox();
+            this.label42 = new System.Windows.Forms.Label();
             this.cmbLegalEntities = new System.Windows.Forms.ComboBox();
             this.label37 = new System.Windows.Forms.Label();
             this.cbDayData = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pOutNote = new System.Windows.Forms.Panel();
+            this.pPromo = new System.Windows.Forms.Panel();
+            this.chbPromo = new System.Windows.Forms.CheckBox();
             this.pnlActions = new System.Windows.Forms.Panel();
             this.pnlAnnul = new System.Windows.Forms.Panel();
             this.pnlVozvr = new System.Windows.Forms.Panel();
             this.cbActions = new System.Windows.Forms.CheckBox();
             this.cbAnnul = new System.Windows.Forms.CheckBox();
             this.cbVozvr = new System.Windows.Forms.CheckBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.tbRoundSum = new System.Windows.Forms.TextBox();
             this.txtClients = new System.Windows.Forms.TextBox();
             this.txtRealizSum = new System.Windows.Forms.TextBox();
             this.txtRealizNetto = new System.Windows.Forms.TextBox();
@@ -76,6 +84,7 @@
             this.ean = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.count = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cash_val = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.is_annul = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.op_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -83,6 +92,7 @@
             this.legalEntityTK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtpDateCash = new System.Windows.Forms.DateTimePicker();
             this.cmbDepsCash = new System.Windows.Forms.ComboBox();
+            this.label41 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label36 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
@@ -175,11 +185,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.помощьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label40 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btActionReport = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnPrintDoc = new System.Windows.Forms.Button();
@@ -191,10 +197,6 @@
             this.btnRefreshRealiz = new System.Windows.Forms.Button();
             this.btnPrintRealiz = new System.Windows.Forms.Button();
             this.btnExitRealiz = new System.Windows.Forms.Button();
-            this.label41 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.cmbTypeNotes = new System.Windows.Forms.ComboBox();
-            this.label42 = new System.Windows.Forms.Label();
             this.mainStatusStrip.SuspendLayout();
             this.tbcCashReport.SuspendLayout();
             this.tabCash.SuspendLayout();
@@ -215,7 +217,7 @@
             this.toolStripStatusLabel2});
             this.mainStatusStrip.Location = new System.Drawing.Point(0, 630);
             this.mainStatusStrip.Name = "mainStatusStrip";
-            this.mainStatusStrip.Size = new System.Drawing.Size(939, 22);
+            this.mainStatusStrip.Size = new System.Drawing.Size(1042, 22);
             this.mainStatusStrip.TabIndex = 0;
             // 
             // tslConnection
@@ -243,19 +245,19 @@
             this.tbcCashReport.Location = new System.Drawing.Point(12, 29);
             this.tbcCashReport.Name = "tbcCashReport";
             this.tbcCashReport.SelectedIndex = 0;
-            this.tbcCashReport.Size = new System.Drawing.Size(915, 598);
+            this.tbcCashReport.Size = new System.Drawing.Size(1018, 598);
             this.tbcCashReport.TabIndex = 1;
             // 
             // tabCash
             // 
             this.tabCash.Controls.Add(this.cmbTypeNotes);
             this.tabCash.Controls.Add(this.label42);
-            this.tabCash.Controls.Add(this.button1);
+            this.tabCash.Controls.Add(this.btActionReport);
             this.tabCash.Controls.Add(this.cmbLegalEntities);
             this.tabCash.Controls.Add(this.label37);
             this.tabCash.Controls.Add(this.cbDayData);
             this.tabCash.Controls.Add(this.groupBox2);
-            this.tabCash.Controls.Add(this.textBox1);
+            this.tabCash.Controls.Add(this.tbRoundSum);
             this.tabCash.Controls.Add(this.txtClients);
             this.tabCash.Controls.Add(this.txtRealizSum);
             this.tabCash.Controls.Add(this.txtRealizNetto);
@@ -280,10 +282,29 @@
             this.tabCash.Location = new System.Drawing.Point(4, 22);
             this.tabCash.Name = "tabCash";
             this.tabCash.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCash.Size = new System.Drawing.Size(907, 572);
+            this.tabCash.Size = new System.Drawing.Size(1010, 572);
             this.tabCash.TabIndex = 0;
             this.tabCash.Text = "Формирование запросов с касс";
             this.tabCash.UseVisualStyleBackColor = true;
+            // 
+            // cmbTypeNotes
+            // 
+            this.cmbTypeNotes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTypeNotes.FormattingEnabled = true;
+            this.cmbTypeNotes.Location = new System.Drawing.Point(342, 66);
+            this.cmbTypeNotes.Name = "cmbTypeNotes";
+            this.cmbTypeNotes.Size = new System.Drawing.Size(138, 21);
+            this.cmbTypeNotes.TabIndex = 35;
+            this.cmbTypeNotes.SelectionChangeCommitted += new System.EventHandler(this.cmbTypeNotes_SelectionChangeCommitted);
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(281, 69);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(55, 13);
+            this.label42.TabIndex = 34;
+            this.label42.Text = "Тип чека:";
             // 
             // cmbLegalEntities
             // 
@@ -318,9 +339,9 @@
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox2.Controls.Add(this.panel3);
-            this.groupBox2.Controls.Add(this.panel1);
-            this.groupBox2.Controls.Add(this.checkBox1);
+            this.groupBox2.Controls.Add(this.pOutNote);
+            this.groupBox2.Controls.Add(this.pPromo);
+            this.groupBox2.Controls.Add(this.chbPromo);
             this.groupBox2.Controls.Add(this.pnlActions);
             this.groupBox2.Controls.Add(this.pnlAnnul);
             this.groupBox2.Controls.Add(this.pnlVozvr);
@@ -333,6 +354,35 @@
             this.groupBox2.Size = new System.Drawing.Size(183, 121);
             this.groupBox2.TabIndex = 29;
             this.groupBox2.TabStop = false;
+            // 
+            // pOutNote
+            // 
+            this.pOutNote.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(231)))), ((int)(((byte)(255)))));
+            this.pOutNote.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pOutNote.Location = new System.Drawing.Point(6, 94);
+            this.pOutNote.Name = "pOutNote";
+            this.pOutNote.Size = new System.Drawing.Size(14, 14);
+            this.pOutNote.TabIndex = 32;
+            // 
+            // pPromo
+            // 
+            this.pPromo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(255)))), ((int)(((byte)(153)))));
+            this.pPromo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pPromo.Location = new System.Drawing.Point(6, 74);
+            this.pPromo.Name = "pPromo";
+            this.pPromo.Size = new System.Drawing.Size(14, 14);
+            this.pPromo.TabIndex = 32;
+            // 
+            // chbPromo
+            // 
+            this.chbPromo.AutoSize = true;
+            this.chbPromo.Location = new System.Drawing.Point(26, 74);
+            this.chbPromo.Name = "chbPromo";
+            this.chbPromo.Size = new System.Drawing.Size(123, 17);
+            this.chbPromo.TabIndex = 33;
+            this.chbPromo.Text = "Акционные товары";
+            this.chbPromo.UseVisualStyleBackColor = true;
+            this.chbPromo.CheckedChanged += new System.EventHandler(this.cbVozvr_CheckedChanged);
             // 
             // pnlActions
             // 
@@ -394,10 +444,29 @@
             this.cbVozvr.UseVisualStyleBackColor = true;
             this.cbVozvr.CheckedChanged += new System.EventHandler(this.cbVozvr_CheckedChanged);
             // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(26, 94);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(83, 13);
+            this.label40.TabIndex = 11;
+            this.label40.Text = "Чеки возврата";
+            // 
+            // tbRoundSum
+            // 
+            this.tbRoundSum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbRoundSum.Location = new System.Drawing.Point(685, 537);
+            this.tbRoundSum.Name = "tbRoundSum";
+            this.tbRoundSum.ReadOnly = true;
+            this.tbRoundSum.Size = new System.Drawing.Size(107, 20);
+            this.tbRoundSum.TabIndex = 28;
+            this.tbRoundSum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // txtClients
             // 
             this.txtClients.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtClients.Location = new System.Drawing.Point(582, 511);
+            this.txtClients.Location = new System.Drawing.Point(685, 511);
             this.txtClients.Name = "txtClients";
             this.txtClients.ReadOnly = true;
             this.txtClients.Size = new System.Drawing.Size(107, 20);
@@ -407,7 +476,7 @@
             // txtRealizSum
             // 
             this.txtRealizSum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtRealizSum.Location = new System.Drawing.Point(582, 485);
+            this.txtRealizSum.Location = new System.Drawing.Point(685, 485);
             this.txtRealizSum.Name = "txtRealizSum";
             this.txtRealizSum.ReadOnly = true;
             this.txtRealizSum.Size = new System.Drawing.Size(107, 20);
@@ -417,7 +486,7 @@
             // txtRealizNetto
             // 
             this.txtRealizNetto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtRealizNetto.Location = new System.Drawing.Point(582, 459);
+            this.txtRealizNetto.Location = new System.Drawing.Point(685, 459);
             this.txtRealizNetto.Name = "txtRealizNetto";
             this.txtRealizNetto.ReadOnly = true;
             this.txtRealizNetto.Size = new System.Drawing.Size(107, 20);
@@ -473,6 +542,7 @@
             this.ean,
             this.cname,
             this.count,
+            this.cPrice,
             this.cash_val,
             this.is_annul,
             this.op_code,
@@ -482,10 +552,10 @@
             this.dgvCash.Name = "dgvCash";
             this.dgvCash.ReadOnly = true;
             this.dgvCash.RowHeadersVisible = false;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvCash.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvCash.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvCash.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCash.Size = new System.Drawing.Size(895, 287);
+            this.dgvCash.Size = new System.Drawing.Size(998, 287);
             this.dgvCash.TabIndex = 23;
             this.dgvCash.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvCash_RowPostPaint);
             this.dgvCash.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvCash_RowPrePaint);
@@ -577,12 +647,24 @@
             this.count.ReadOnly = true;
             this.count.Width = 80;
             // 
+            // cPrice
+            // 
+            this.cPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.cPrice.DataPropertyName = "price";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.Format = "N2";
+            this.cPrice.DefaultCellStyle = dataGridViewCellStyle6;
+            this.cPrice.HeaderText = "Цена на кассе";
+            this.cPrice.Name = "cPrice";
+            this.cPrice.ReadOnly = true;
+            this.cPrice.Width = 80;
+            // 
             // cash_val
             // 
             this.cash_val.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.cash_val.DataPropertyName = "cash_val";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.cash_val.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.cash_val.DefaultCellStyle = dataGridViewCellStyle7;
             this.cash_val.HeaderText = "Сумма";
             this.cash_val.Name = "cash_val";
             this.cash_val.ReadOnly = true;
@@ -642,6 +724,16 @@
             this.cmbDepsCash.TabIndex = 16;
             this.cmbDepsCash.SelectedValueChanged += new System.EventHandler(this.cmbDepsCash_SelectedValueChanged);
             // 
+            // label41
+            // 
+            this.label41.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(510, 540);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(124, 13);
+            this.label41.TabIndex = 13;
+            this.label41.Text = "Итого по округлениям:";
+            // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -669,7 +761,7 @@
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Location = new System.Drawing.Point(507, 3);
+            this.groupBox1.Location = new System.Drawing.Point(610, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(356, 142);
             this.groupBox1.TabIndex = 14;
@@ -927,7 +1019,7 @@
             // 
             this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(407, 514);
+            this.label14.Location = new System.Drawing.Point(510, 514);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(117, 13);
             this.label14.TabIndex = 13;
@@ -937,7 +1029,7 @@
             // 
             this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(407, 488);
+            this.label13.Location = new System.Drawing.Point(510, 488);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(169, 13);
             this.label13.TabIndex = 12;
@@ -947,7 +1039,7 @@
             // 
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(407, 462);
+            this.label12.Location = new System.Drawing.Point(510, 462);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(121, 13);
             this.label12.TabIndex = 11;
@@ -1018,7 +1110,7 @@
             this.tabRealiz.Location = new System.Drawing.Point(4, 22);
             this.tabRealiz.Name = "tabRealiz";
             this.tabRealiz.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRealiz.Size = new System.Drawing.Size(907, 572);
+            this.tabRealiz.Size = new System.Drawing.Size(1010, 572);
             this.tabRealiz.TabIndex = 1;
             this.tabRealiz.Text = "Реализация товаров";
             this.tabRealiz.UseVisualStyleBackColor = true;
@@ -1155,14 +1247,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvRealiz.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRealiz.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRealiz.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRealiz.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvRealiz.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRealiz.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.grp1_name,
@@ -1173,28 +1265,28 @@
             this.clients_count,
             this.rcena,
             this.legalEntityRealiz});
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRealiz.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRealiz.DefaultCellStyle = dataGridViewCellStyle14;
             this.dgvRealiz.Location = new System.Drawing.Point(6, 107);
             this.dgvRealiz.Name = "dgvRealiz";
             this.dgvRealiz.ReadOnly = true;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRealiz.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRealiz.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvRealiz.RowHeadersVisible = false;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvRealiz.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvRealiz.RowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dgvRealiz.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRealiz.Size = new System.Drawing.Size(895, 295);
             this.dgvRealiz.TabIndex = 34;
@@ -1213,8 +1305,8 @@
             // 
             this.ean_realiz.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.ean_realiz.DataPropertyName = "ean";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ean_realiz.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ean_realiz.DefaultCellStyle = dataGridViewCellStyle10;
             this.ean_realiz.HeaderText = "EAN";
             this.ean_realiz.Name = "ean_realiz";
             this.ean_realiz.ReadOnly = true;
@@ -1230,8 +1322,8 @@
             // 
             this.count_realiz.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.count_realiz.DataPropertyName = "sum_count";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.count_realiz.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.count_realiz.DefaultCellStyle = dataGridViewCellStyle11;
             this.count_realiz.HeaderText = "Кол-во";
             this.count_realiz.Name = "count_realiz";
             this.count_realiz.ReadOnly = true;
@@ -1240,8 +1332,8 @@
             // 
             this.cash_val_realiz.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.cash_val_realiz.DataPropertyName = "sum_cash_val";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.cash_val_realiz.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.cash_val_realiz.DefaultCellStyle = dataGridViewCellStyle12;
             this.cash_val_realiz.HeaderText = "Сумма";
             this.cash_val_realiz.Name = "cash_val_realiz";
             this.cash_val_realiz.ReadOnly = true;
@@ -1250,8 +1342,8 @@
             // 
             this.clients_count.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.clients_count.DataPropertyName = "clients_count";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.clients_count.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.clients_count.DefaultCellStyle = dataGridViewCellStyle13;
             this.clients_count.HeaderText = "Покупателей";
             this.clients_count.Name = "clients_count";
             this.clients_count.ReadOnly = true;
@@ -1618,7 +1710,7 @@
             this.помощьToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(939, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1042, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -1626,63 +1718,27 @@
             // 
             this.помощьToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.помощьToolStripMenuItem.Name = "помощьToolStripMenuItem";
-            this.помощьToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.помощьToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
             this.помощьToolStripMenuItem.Text = "Помощь";
             this.помощьToolStripMenuItem.Click += new System.EventHandler(this.помощьToolStripMenuItem_Click);
             // 
-            // panel1
+            // btActionReport
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(255)))), ((int)(((byte)(153)))));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(6, 74);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(14, 14);
-            this.panel1.TabIndex = 32;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(26, 74);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(123, 17);
-            this.checkBox1.TabIndex = 33;
-            this.checkBox1.Text = "Акционные товары";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(231)))), ((int)(((byte)(255)))));
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Location = new System.Drawing.Point(6, 94);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(14, 14);
-            this.panel3.TabIndex = 32;
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(26, 94);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(83, 13);
-            this.label40.TabIndex = 11;
-            this.label40.Text = "Чеки возврата";
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Image = global::CashReportNew.Properties.Resources.excel;
-            this.button1.Location = new System.Drawing.Point(717, 533);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(32, 32);
-            this.button1.TabIndex = 33;
-            this.toolTips.SetToolTip(this.button1, "Суммарный отчёт по акционным товарам за период");
-            this.button1.UseVisualStyleBackColor = true;
+            this.btActionReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btActionReport.Image = global::CashReportNew.Properties.Resources.excel;
+            this.btActionReport.Location = new System.Drawing.Point(820, 533);
+            this.btActionReport.Name = "btActionReport";
+            this.btActionReport.Size = new System.Drawing.Size(32, 32);
+            this.btActionReport.TabIndex = 33;
+            this.toolTips.SetToolTip(this.btActionReport, "Суммарный отчёт по акционным товарам за период");
+            this.btActionReport.UseVisualStyleBackColor = true;
+            this.btActionReport.Click += new System.EventHandler(this.btActionReport_Click);
             // 
             // btnRefresh
             // 
             this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRefresh.Image = global::CashReportNew.Properties.Resources.pict_refresh;
-            this.btnRefresh.Location = new System.Drawing.Point(755, 533);
+            this.btnRefresh.Location = new System.Drawing.Point(858, 533);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(32, 32);
             this.btnRefresh.TabIndex = 22;
@@ -1694,7 +1750,7 @@
             // 
             this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPrint.Image = global::CashReportNew.Properties.Resources.WZPRINT;
-            this.btnPrint.Location = new System.Drawing.Point(793, 533);
+            this.btnPrint.Location = new System.Drawing.Point(896, 533);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(32, 32);
             this.btnPrint.TabIndex = 21;
@@ -1706,7 +1762,7 @@
             // 
             this.btnPrintDoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPrintDoc.Image = global::CashReportNew.Properties.Resources.script;
-            this.btnPrintDoc.Location = new System.Drawing.Point(831, 533);
+            this.btnPrintDoc.Location = new System.Drawing.Point(934, 533);
             this.btnPrintDoc.Name = "btnPrintDoc";
             this.btnPrintDoc.Size = new System.Drawing.Size(32, 32);
             this.btnPrintDoc.TabIndex = 20;
@@ -1718,7 +1774,7 @@
             // 
             this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExit.Image = global::CashReportNew.Properties.Resources.pict_close;
-            this.btnExit.Location = new System.Drawing.Point(869, 533);
+            this.btnExit.Location = new System.Drawing.Point(972, 533);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(32, 32);
             this.btnExit.TabIndex = 19;
@@ -1730,7 +1786,7 @@
             // 
             this.btnClearFilters.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClearFilters.Image = global::CashReportNew.Properties.Resources._8;
-            this.btnClearFilters.Location = new System.Drawing.Point(869, 9);
+            this.btnClearFilters.Location = new System.Drawing.Point(972, 9);
             this.btnClearFilters.Name = "btnClearFilters";
             this.btnClearFilters.Size = new System.Drawing.Size(32, 32);
             this.btnClearFilters.TabIndex = 17;
@@ -1809,49 +1865,11 @@
             this.btnExitRealiz.UseVisualStyleBackColor = true;
             this.btnExitRealiz.Click += new System.EventHandler(this.btnExitRealiz_Click);
             // 
-            // label41
-            // 
-            this.label41.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(407, 540);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(124, 13);
-            this.label41.TabIndex = 13;
-            this.label41.Text = "Итого по округлениям:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(582, 537);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(107, 20);
-            this.textBox1.TabIndex = 28;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // cmbTypeNotes
-            // 
-            this.cmbTypeNotes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTypeNotes.FormattingEnabled = true;
-            this.cmbTypeNotes.Location = new System.Drawing.Point(342, 66);
-            this.cmbTypeNotes.Name = "cmbTypeNotes";
-            this.cmbTypeNotes.Size = new System.Drawing.Size(138, 21);
-            this.cmbTypeNotes.TabIndex = 35;
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(281, 69);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(55, 13);
-            this.label42.TabIndex = 34;
-            this.label42.Text = "Тип чека:";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(939, 652);
+            this.ClientSize = new System.Drawing.Size(1042, 652);
             this.Controls.Add(this.tbcCashReport);
             this.Controls.Add(this.mainStatusStrip);
             this.Controls.Add(this.menuStrip1);
@@ -1999,20 +2017,6 @@
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.ComboBox cmbLegalEntitiesRealiz;
         private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.DataGridViewTextBoxColumn terminal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn kassir_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn doc_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn time;
-        private System.Windows.Forms.DataGridViewTextBoxColumn operation_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn group_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ean;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn count;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cash_val;
-        private System.Windows.Forms.DataGridViewTextBoxColumn is_annul;
-        private System.Windows.Forms.DataGridViewTextBoxColumn op_code;
-        private System.Windows.Forms.DataGridViewTextBoxColumn legalEntity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn legalEntityTK;
         private System.Windows.Forms.DataGridViewTextBoxColumn grp1_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn ean_realiz;
         private System.Windows.Forms.DataGridViewTextBoxColumn cname_realiz;
@@ -2027,15 +2031,30 @@
         private System.Windows.Forms.ComboBox cmbTerminalsRealiz;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.CheckBox cbTerminalRealiz;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Panel pOutNote;
+        private System.Windows.Forms.Panel pPromo;
+        private System.Windows.Forms.CheckBox chbPromo;
         private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btActionReport;
+        private System.Windows.Forms.TextBox tbRoundSum;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.ComboBox cmbTypeNotes;
         private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.DataGridViewTextBoxColumn terminal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kassir_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn doc_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn time;
+        private System.Windows.Forms.DataGridViewTextBoxColumn operation_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn group_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ean;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn count;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cash_val;
+        private System.Windows.Forms.DataGridViewTextBoxColumn is_annul;
+        private System.Windows.Forms.DataGridViewTextBoxColumn op_code;
+        private System.Windows.Forms.DataGridViewTextBoxColumn legalEntity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn legalEntityTK;
     }
 }
 

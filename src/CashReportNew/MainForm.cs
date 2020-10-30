@@ -436,6 +436,15 @@ namespace CashReportNew
                         filter += " and op_code <> 524";
                     }
 
+                    if (chbPromo.Checked)
+                    {
+                        filter += (filter.Length == 0 ? "" : " and ") + $"id_promo is not null";
+                    }
+
+                    if ((int)cmbTypeNotes.SelectedValue == 2) filter += (filter.Length == 0 ? "" : " and ") + $"((op_code = 505 and count > 0) or op_code <> 505) ";
+                    if ((int)cmbTypeNotes.SelectedValue == 3) filter += (filter.Length == 0 ? "" : " and ") + $"op_code = 505 and count < 0";
+
+
                     filter += cmbLegalEntities.SelectedValue.ToString() == "0" ? "" : $" AND legalEntity LIKE \'%{cmbLegalEntities.Text}%\'";
 
                     if (cbCash.Checked)
@@ -444,6 +453,8 @@ namespace CashReportNew
                         filter += $" and kassir_name LIKE '%{cmbKassir.Text.ToString()}%'";
                     if (cmbDepsCash.SelectedValue.ToString() != "0")
                         filter += " and idDep = " + cmbDepsCash.SelectedValue.ToString();
+
+
                     dtCash.DefaultView.RowFilter = filter;
 
                     //if (cbVozvr.Checked)
@@ -533,9 +544,18 @@ namespace CashReportNew
                 else if (Convert.ToInt32(curRow.Cells["op_code"].Value) == 524)
                 {
                     color = pnlActions.BackColor;
-                }
+                }else if(dtCash.Columns.Contains("id_promo") && dtCash.DefaultView[curRow.Index]["id_promo"]!=DBNull.Value)
+                    color = pPromo.BackColor;
 
                 curRow.DefaultCellStyle.BackColor = curRow.DefaultCellStyle.SelectionBackColor = color;
+
+                if (dtCash.Columns.Contains("op_code") && dtCash.Columns.Contains("count") && (Int16)dtCash.DefaultView[curRow.Index]["op_code"] == 505 && (decimal)dtCash.DefaultView[curRow.Index]["count"] < 0)
+                {
+                    curRow.Cells["ean"].Style.BackColor = curRow.Cells["ean"].Style.SelectionBackColor = pOutNote.BackColor;
+                    curRow.Cells["cname"].Style.BackColor = curRow.Cells["cname"].Style.SelectionBackColor = pOutNote.BackColor;
+                    curRow.Cells["doc_id"].Style.BackColor = curRow.Cells["doc_id"].Style.SelectionBackColor = pOutNote.BackColor;
+                }
+
             }
         }
 
@@ -667,6 +687,10 @@ namespace CashReportNew
                 //txtRealizNetto.Text = (GetDecimalSumValue(dt, "sum(count)", "op_code = 505") - GetDecimalSumValue(dt, "sum(count)", "op_code = 507")).ToString("N3");
                 //txtRealizSum.Text = (GetDecimalSumValue(dt, "sum(cash_val)", "op_code = 505") - GetDecimalSumValue(dt, "sum(cash_val)", "op_code = 507")).ToString("N2");
                 txtClients.Text = dt.AsEnumerable().Select(r => r["terminal"].ToString() + "-" + r["doc_id"].ToString()).Distinct().Count().ToString();
+
+                decimal sumRound =  dt.AsEnumerable().Where(r => r.Field<Int16>("op_code") == 524).Sum(r => r.Field<decimal>("cash_val"));
+                tbRoundSum.Text = sumRound.ToString("0.00");
+
             }
             else
             {
@@ -1145,10 +1169,11 @@ namespace CashReportNew
             {
                 if (dtpDateStart.Value < dtpDateEnd.Value || dtpDateStart.Value == dtpDateEnd.Value && dtpTimeStartRealiz.Value < dtpTimeEndRealiz.Value)
                 {
-                    DataTable dt = (dgvRealiz.DataSource as DataTable).DefaultView.ToTable();
-                    dt.Columns.Remove("rcena");
+                    //DataTable dt = (dgvRealiz.DataSource as DataTable).DefaultView.ToTable();
+                    //dt.Columns.Remove("rcena");
 
-                    Reports.RealizReport.ShowRealizReport(cmbDepsRealiz.Text, cmbGroups.Text, dtpDateStart.Value.Date.AddHours(dtpTimeStartRealiz.Value.Hour).AddMinutes(dtpTimeStartRealiz.Value.Minute), dtpDateEnd.Value.Date.AddHours(dtpTimeEndRealiz.Value.Hour).AddMinutes(dtpTimeEndRealiz.Value.Minute), dt, new List<string>() { txtNettoKgAll.Text, txtSumKgAll.Text, txtNettoShtAll.Text, txtSumShtAll.Text, txtSumAll.Text });
+                    //Reports.RealizReport.ShowRealizReport(cmbDepsRealiz.Text, cmbGroups.Text, dtpDateStart.Value.Date.AddHours(dtpTimeStartRealiz.Value.Hour).AddMinutes(dtpTimeStartRealiz.Value.Minute), dtpDateEnd.Value.Date.AddHours(dtpTimeEndRealiz.Value.Hour).AddMinutes(dtpTimeEndRealiz.Value.Minute), dt, new List<string>() { txtNettoKgAll.Text, txtSumKgAll.Text, txtNettoShtAll.Text, txtSumShtAll.Text, txtSumAll.Text });
+                    printReoirtTab2();
                     LogPrintRealiz();
                 }
                 else
@@ -1160,6 +1185,113 @@ namespace CashReportNew
             {
                 MessageBox.Show("Нет данных для выгрузки!");
             }
+        }
+
+        private void setWidthColumn(int indexRow, int indexCol, int width, Nwuram.Framework.ToExcelNew.ExcelUnLoad report)
+        {
+            report.SetColumnWidth(indexRow, indexCol, indexRow, indexCol, width);
+        }
+
+        private void printReoirtTab2()
+        {
+            Nwuram.Framework.ToExcelNew.ExcelUnLoad report = new Nwuram.Framework.ToExcelNew.ExcelUnLoad();
+
+            DataTable dtReport = (dgvRealiz.DataSource as DataTable).DefaultView.ToTable();
+
+            int indexRow = 1;
+
+            int maxColumns = 0;
+
+            foreach (DataGridViewColumn col in dgvRealiz.Columns)
+                if (col.Visible)
+                {
+                    maxColumns++;
+                    if (col.Name.Equals("grp1_name")) setWidthColumn(indexRow, maxColumns, 16, report);
+                    if (col.Name.Equals("ean_realiz")) setWidthColumn(indexRow, maxColumns, 14, report);
+                    if (col.Name.Equals("cname_realiz")) setWidthColumn(indexRow, maxColumns, 25, report);
+                    if (col.Name.Equals("count_realiz")) setWidthColumn(indexRow, maxColumns, 10, report);
+                    if (col.Name.Equals("cash_val_realiz")) setWidthColumn(indexRow, maxColumns, 10, report);
+                    if (col.Name.Equals("clients_count")) setWidthColumn(indexRow, maxColumns, 14, report);
+                    if (col.Name.Equals("legalEntityRealiz")) setWidthColumn(indexRow, maxColumns, 8, report);
+                }
+
+            #region "Head"
+            report.Merge(indexRow, 1, indexRow, maxColumns);
+            report.AddSingleValue($"Отчёт по реализации по кассам", indexRow, 1);
+            report.SetFontBold(indexRow, 1, indexRow, 1);
+            report.SetFontSize(indexRow, 1, indexRow, 1, 16);
+            report.SetCellAlignmentToCenter(indexRow, 1, indexRow, 1);
+            indexRow++;
+            indexRow++;
+
+            report.Merge(indexRow, 1, indexRow, maxColumns);
+            report.AddSingleValue($"Отдел: {cmbDepsRealiz.Text}", indexRow, 1);
+            indexRow++;
+
+            report.Merge(indexRow, 1, indexRow, maxColumns);
+            report.AddSingleValue($"ТУ группа: {cmbGroups.Text}", indexRow, 1);
+            indexRow++;
+
+            report.Merge(indexRow, 1, indexRow, maxColumns);
+            report.AddSingleValue($"Период с {dtpDateStart.Value.Date.AddHours(dtpTimeStartRealiz.Value.Hour).AddMinutes(dtpTimeStartRealiz.Value.Minute).ToString()} по {dtpDateEnd.Value.Date.AddHours(dtpTimeEndRealiz.Value.Hour).AddMinutes(dtpTimeEndRealiz.Value.Minute).ToString()}", indexRow, 1);
+            indexRow++;
+
+            report.Merge(indexRow, 1, indexRow, maxColumns);
+            report.AddSingleValue("Выгрузил: " + Nwuram.Framework.Settings.User.UserSettings.User.FullUsername, indexRow, 1);
+            indexRow++;
+
+            report.Merge(indexRow, 1, indexRow, maxColumns);
+            report.AddSingleValue("Дата выгрузки: " + DateTime.Now.ToString(), indexRow, 1);
+            indexRow++;
+            indexRow++;
+            #endregion
+
+            int indexCol = 0;
+            foreach (DataGridViewColumn col in dgvRealiz.Columns)
+                if (col.Visible)
+                {
+                    indexCol++;
+                    report.AddSingleValue(col.HeaderText, indexRow, indexCol);
+                }
+            report.SetFontBold(indexRow, 1, indexRow, maxColumns);
+            report.SetBorders(indexRow, 1, indexRow, maxColumns);
+            report.SetCellAlignmentToCenter(indexRow, 1, indexRow, maxColumns);
+            report.SetCellAlignmentToJustify(indexRow, 1, indexRow, maxColumns);
+            report.SetWrapText(indexRow, 1, indexRow, maxColumns);
+            indexRow++;
+
+            foreach (DataRowView row in dtReport.DefaultView)
+            {
+                indexCol = 1;
+                report.SetWrapText(indexRow, indexCol, indexRow, maxColumns);
+                foreach (DataGridViewColumn col in dgvRealiz.Columns)
+                {
+                    if (col.Visible)
+                    {
+                        if (row[col.DataPropertyName] is DateTime)
+                            report.AddSingleValue(((DateTime)row[col.DataPropertyName]).ToShortDateString(), indexRow, indexCol);
+                        else
+                           if (row[col.DataPropertyName] is decimal)
+                        {
+                            report.AddSingleValueObject(row[col.DataPropertyName], indexRow, indexCol);
+                            report.SetFormat(indexRow, indexCol, indexRow, indexCol, "0.00");
+                        }
+                        else
+                            report.AddSingleValue(row[col.DataPropertyName].ToString(), indexRow, indexCol);
+
+                        indexCol++;
+                    }
+                }
+
+                report.SetBorders(indexRow, 1, indexRow, maxColumns);
+                report.SetCellAlignmentToCenter(indexRow, 1, indexRow, maxColumns);
+                report.SetCellAlignmentToJustify(indexRow, 1, indexRow, maxColumns);
+
+                indexRow++;
+            }
+
+            report.SetPageSetup(1, 9999, true);
+            report.Show();
         }
 
         private void LogPrintRealiz()
@@ -1435,6 +1567,16 @@ namespace CashReportNew
         private void cmbTerminalsRealiz_SelectedValueChanged(object sender, EventArgs e)
         {
             dgvRealiz_Filter();
+        }
+
+        private void cmbTypeNotes_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            dgvCash_Filter();
+        }
+
+        private void btActionReport_Click(object sender, EventArgs e)
+        {
+            new frmReportActionGoods().ShowDialog();
         }
     }
 }
